@@ -1,0 +1,30 @@
+/* ***************************
+		CASES PAGE
+*************************** */
+
+
+.cases-container {
+	.cases-content {
+		@include flex-direction(row);
+	}
+	.left {
+		max-width: 50%;
+	}
+	.right {
+		max-width: 50%;
+	}
+}
+
+/* ***************************
+		ABOUT PAGE
+*************************** */
+
+.about-us {
+	.about-text {
+		width: 55%;
+	}
+}
+
+.contact-info {
+	width: 55%;
+}

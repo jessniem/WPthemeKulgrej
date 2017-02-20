@@ -1,0 +1,523 @@
+/* ***************************
+		BASE
+*************************** */
+@import "assets/mixins";
+
+:root {
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 300;
+	font-size: 62.5%;
+}
+html {
+	height: 100%;
+}
+
+body {
+	background-color: $lightgrey;
+	color: $brown;
+	font-size: 17px;
+	font-size: 1.7em;
+	min-height: 100%;
+	@include flexbox;
+	@include flex-direction(column);
+
+}
+
+#{$a-tags} {
+	color: $blue;
+	text-decoration: none;
+}
+#{$a-tags-hover} {
+	font-weight: bold;
+	@include transition(all 200ms ease-in-out);
+}
+ul {
+	list-style: none;
+	padding: 0;
+}
+h1, h2 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+
+}
+h1 {
+	font-size: 30px;
+	font-size: 3em;
+	letter-spacing: 2px;
+	line-height: 14px;
+	line-height: 1.4em;
+}
+h2 {
+	font-size: 26px;
+	font-size:2.6em;
+	letter-spacing: 2px;
+	line-height: 14px;
+	line-height: 1.4em;
+}
+
+h3 {
+	font-size: 20px;
+	font-size: 2.0em;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.fixed {
+	background-attachment: fixed;
+}
+.flex {
+	max-width: 100%;
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(center);
+}
+.line-height {
+	line-height: 14px;
+	line-height: 1.4em;
+}
+
+.wrapper {
+	flex: 1;
+}
+
+.hidden {
+	display: none;
+}
+
+/* ***************************
+		HEADER
+*************************** */
+
+header {
+	background-color: $brown;
+	color: $lightgrey;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+	@include orange-line;
+	nav {
+		width: 100%;
+		height: 100%;
+		@include flexbox;
+		@include align-items(flex-end);
+		@include justify-content(space-between);
+		.menu .current-menu-item a {
+			color: $orange;
+		}
+		.left {
+			height: 100%;
+			padding-left: 20px;
+			.custom-logo {
+				height: auto;
+				max-width: 190px;
+				padding-top: 5px;
+			}
+		}
+		.right {
+			font-size: 14px;
+			padding-right: 20px;
+			width: 480px;
+			@include justify-content(flex-end);
+
+		}
+		.menu-menu-container ul {
+			@include flexbox;
+			@include justify-content(space-between);
+		}
+		.menu-item {
+			@include justify-content(space-between);
+		}
+	}
+	#{$a-menu} {
+		color: $lightgrey;
+		text-decoration: none;
+	}
+	#{$a-menu-hover} {
+		color: $orange;
+		font-weight: normal;
+		@include transition(all 200ms ease-in-out);
+	}
+}
+	#responsive-menu-button {
+		background-color: $brown !important;
+		border: 2px solid $orange !important;
+	}
+
+/* ***************************
+		HEADER IMG
+*************************** */
+
+.header-img {
+	background-attachment: initial;
+	background-position: 50% 50%;
+	background-size: cover;
+	max-height: 100%;
+	padding: 60px 0;
+	width: 100%;
+	@include flexbox;
+	@include justify-content(center);
+	.header-bg {
+		background: rgba(38, 28, 22, 0.7);
+		padding: 10px 30px 0;
+		.header-title {
+			color: $lightgrey;
+		}
+	}
+}
+
+/* ***************************
+		INDEX PAGE
+*************************** */
+
+.index-img {
+	background-color: $brown;
+	background-size: cover;
+	background-position: 50% 50%;
+	padding: 18vh 20% 31vh;
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(center);
+	.header-bg {
+		background: rgba(239, 155, 40, 0.7);
+		margin: 0 auto;
+		text-align: center;
+		width: 100%;
+		z-index: 100;
+	}
+	.index-title {
+		z-index: 1000;
+		img {
+			box-sizing: border-box;
+			max-width: 100%;
+			padding: 0 15%;
+		}
+	}
+}
+
+/* ***************************
+		TURNING WORDS
+*************************** */
+
+.turning-words {
+	margin: 0 auto;
+	width: 200px;
+	@include flexbox;
+	@include flex-direction(column);
+
+	/* Sentence */
+	.sentence {
+		 color: $lightgrey;
+		 font-family: 'Josefin Sans', sans-serif;
+		 font-size: 16px;
+		 font-size: 1.6em;
+		 font-weight: 400;
+		 margin-bottom: 5px;
+		 text-shadow: 1.5px 1.5px 1.5px $brown;
+		 text-transform: uppercase;
+		 @include flexbox;
+	}
+
+	/* Horizontal Sliding */
+	.tw{
+		//display: inline;
+		@extend .sentence;
+
+		span{
+			color: $orange;
+			opacity: 0;
+			overflow: hidden;
+			position: absolute;
+			@include animation(leftToRight 27s linear infinite 0s);
+		}
+	}
+	.tw span:nth-child(2){
+		@include animation-delay(3s);
+	}
+	.tw span:nth-child(3){
+		@include animation-delay(6s);
+	}
+	.tw span:nth-child(4){
+		@include animation-delay(9s);
+	}
+	.tw span:nth-child(5){
+		@include animation-delay(12s);
+	}
+	.tw span:nth-child(6){
+		@include animation-delay(15s);
+	}
+	.tw span:nth-child(7){
+		@include animation-delay(18s);
+	}
+	.tw span:nth-child(8){
+		@include animation-delay(21s);
+	}
+	.tw span:nth-child(9){
+		@include animation-delay(24s);
+	}
+	.tw span:nth-child(10){
+		@include animation-delay(27s);
+	}
+
+
+	/* leftToRight Animation */
+	@keyframes leftToRight{
+		0% { opacity: 0; }
+		5% { opacity: 0; @include translateX(-100px); }
+		9% { opacity: 1; @include translateX(0px); }
+		13% { opacity: 1; @include translateX(0px); }
+		16% { opacity: 0; @include translateX(100px); }
+		100% { opacity: 0; }
+	}
+}
+
+
+/* ***************************
+		MAIN CONTENT
+*************************** */
+
+.main-container {
+	margin: 20px;
+}
+
+/* ***************************
+		ABOUT PAGE
+*************************** */
+.about-us {
+	margin: 0 20px;
+	max-height: 100%;
+	@include flexbox;
+	@include justify-content(center);
+	.about-text {
+		height: 80%;
+		width: 100%;
+	}
+}
+
+.contact-info {
+	margin: 0 20px;
+	max-height: 100%;
+	padding-bottom: 40px;
+	@include flexbox;
+	@include flex-direction(column);
+	.about {
+		height: 80%;
+	}
+}
+
+/* ***************************
+		INSTAGRAM
+*************************** */
+
+#sb_instagram .sb_instagram_header {
+	width: 70%;
+}
+
+/* ***************************
+		QUOTES PAGE
+*************************** */
+
+.main-quote {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+.quote-container {
+	@include flexbox;
+	@include flex-direction(column);
+	.quote-text {
+		padding: 30px;
+		&:nth-child(even) {
+			background-color: $orange;
+		}
+	}
+	.quoter {
+		font-weight: bold;
+	}
+}
+
+/* ***************************
+		CASES PAGE
+*************************** */
+
+.cases-container {
+	margin: 20px;
+	@include flexbox;
+	@include flex-direction(column);
+
+	.cases-content {
+		margin: 40px 0;
+		@include flexbox;
+		@include flex-direction(column);
+		.left img {
+			height: auto;
+			max-width: 96%;
+		}
+	}
+}
+
+/* ***************************
+		CONTACT PAGE
+*************************** */
+
+#map {
+	height: 300px;
+}
+.contact {
+	margin: 0 auto;
+	padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+	.contact-title {
+		font-size: 18px;
+		font-size: 1.8em;
+		text-align: center;
+	}
+}
+.wpcf7 {
+	max-width: 100%;
+	.wpcf7-form-control {
+		border: 1px solid $blue;
+		box-sizing: border-box;
+		font-family: 'Catamaran', sans-serif;
+		width: 100%;
+	}
+	.wpcf7-submit {
+		background-color: $blue;
+		box-sizing: border-box;
+		color: $lightgrey;
+		font-size: 11px;
+		font-size: 1.1em;
+		padding: 10px;
+		width: 100%;
+		&:hover {
+			background-color: rgba(#098f9e, 0.96);
+			box-shadow: 1px 1px 1px $grey;
+			color: white;
+			@include transition(all 200ms ease-in-out);
+		}
+	}
+	.wpcf7-textarea {
+		box-sizing: border-box;
+		padding: 10px;
+	}
+	.g-recaptcha {
+		border: none;
+		box-sizing: border-box;
+		padding-left: calc((100% - 304px)/2);
+	}
+	input {
+		box-sizing: border-box;
+		font-size: 15px;
+		padding: 10px;
+	}
+}
+
+::-webkit-input-placeholder {
+	color: $grey;
+	font-size: 15px;
+}
+:-moz-placeholder {
+	color: $grey;
+	font-size: 15px;
+}
+::-moz-placeholder {
+	color: $grey;
+	font-size: 15px;
+}
+:-ms-input-placeholder {
+	color: $grey;
+	font-size: 15px;
+}
+
+/* ***************************
+		FOOTER
+*************************** */
+
+footer {
+	background-color: $brown;
+	box-sizing: border-box;
+	color: $lightgrey;
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 20px 0;
+	@include flexbox;
+	@include align-items(center);
+	@include flex-direction(column);
+	@include orange-line;
+	.footer-col-1 {
+		padding: 10px;
+	}
+	.footer-col-2 {
+		order: 3;
+		padding: 10px;
+	}
+	.footer-col-3 {
+		padding: 10px;
+		i {
+			color: $lightgrey;
+			padding: 0 6px;
+			&:hover {
+				color: $blue;
+				@include transition(all 200ms ease-in-out);
+			}
+		}
+	}
+}
+
+.cookie-notificaton {
+	background-color: $lightgrey;
+	border: 1px $blue solid;
+	padding: 15px;
+	text-align: center;
+	.cookie-button {
+		background-color: $blue;
+		border: none;
+		color: $lightgrey;
+		font-family: 'Catamaran', sans-serif;
+		margin-top: 10px;
+		padding: 5px;
+	}
+}
+
+/* ***************************
+		NOT FOUND
+*************************** */
+
+.not-found {
+	background-color: $brown;
+	background-image: url("http://kulgrej.se/wordpress/wp-content/uploads/2017/02/notfound.jpg");
+	background-position: center center;
+	background-size: cover;
+	padding: 100px 0 200px;
+	text-align: center;
+	.not-found-text {
+		color: $lightgrey;
+	}
+}
+
+/* ***************************
+		SEARCH
+*************************** */
+
+.search {
+	.search-img {
+		background-image: url("http://kulgrej.se/wordpress/wp-content/uploads/2017/02/searchimage.jpg");
+	}
+	a {
+		color: $brown;
+		&:hover {
+			color: $blue;
+			@include transition(all 200ms ease-in-out);
+		}
+	}
+}
+.search-result {
+	text-transform: none;
+}
+
+.list-result {
+	a:hover {
+		font-weight: normal;
+		@include transition(all 200ms ease-in-out);
+	}
+}

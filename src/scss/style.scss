@@ -1,0 +1,28 @@
+@import "normalize";
+@import "assets/_colors";
+@import "assets/mixins";
+@import "base";
+
+/* topToBottom Animation used in tablet view
+and larger needs to be defined here to
+work in Internet Explorer */
+@keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; @include translateY(-50px); }
+	10% { opacity: 1; @include translateY(0px); }
+	15% { opacity: 1; @include translateY(0px); }
+	20% { opacity: 0; @include translateY(50px); }
+	100% { opacity: 0; }
+}
+
+@media screen and (min-width:736px) {
+	@import "_tablet";
+}
+
+@media screen and (min-width:1150px) {
+	@import "_desktop";
+}
+
+@media print {
+	@import "assets/_print";
+}

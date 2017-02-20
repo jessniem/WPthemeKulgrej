@@ -1,0 +1,41 @@
+.no-break {
+	page-break-inside: avoid;
+	break-inside: avoid;
+}
+
+body {
+	background-color: #ffffff;
+	margin: 15mm;
+}
+
+header {
+	display: none;
+}
+
+.header-img {
+	background-image: none !important;
+	padding: 0;
+	.header-bg {
+		background: none;
+		padding: 0;
+		.header-title {
+			color: $brown;
+		}
+	}
+}
+
+.quote-container .quote-text:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.turning-words {
+	display: none;
+}
+
+#cookie-notification {
+	display: none;
+}
+
+footer {
+	display: none;
+}

@@ -1,0 +1,100 @@
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+$a-menu: 'a, a:active, a:hover, a:visited';
+$a-menu-hover: 'a:active, a:hover';
+
+
+@mixin orange-line {
+	border-bottom: 5px solid $orange;
+}
+
+
+/* BROWSER PREFIX FOR FLEXBOX */
+
+@mixin flexbox() {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* IE 10 */
+	display: -webkit-flex;     /* Chrome */
+	display: flex;
+}
+@mixin align-items($value) {
+	-moz-box-align: $value;
+	-ms-flex-align: $value;
+	-webkit-align-items: $value;
+	-webkit-box-align: $value;
+	align-items: $value;
+
+	@if align-items($value == flex-end) {
+		-ms-flex-align: end;
+	}
+}
+@mixin flex-direction($direction) {
+	-ms-flex-direction: $direction;
+	-webkit-box-direction: $direction;
+	-webkit-flex-direction: $direction;
+	flex-direction: $direction;
+}
+@mixin flex($grow) {
+	-webkit-box-flex-grow: $grow;
+	-webkit-flex: $grow;
+	-ms-flex: $grow;
+	flex: $grow;
+}
+@mixin justify-content($value) {
+	-webkit-box-pack: $value;
+	-moz-box-pack: $value;
+	-ms-flex-pack: $value;
+	justify-content: $value;
+
+	@if justify-content($value == space-between) {
+		-ms-flex-pack: justify;
+		}
+	@if justify-content($value == space-around) {
+		-ms-flex-pack: distribute;
+	}
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($value) {
+	-webkit-box-flex-wrap: $value;
+	-webkit-flex-wrap: $value;
+	-ms-flex-wrap: $value;
+	flex-wrap: $value;
+}
+
+/* BROWSER PREFIX FOR ANIMATIONS */
+
+@mixin animation($value) {
+	animation: $value;
+	-ms-animation: $value;
+	-webkit-animation: $value;
+}
+@mixin animation-delay($s) {
+	animation-delay: $s;
+	-ms-animation-delay: $s;
+	-webkit-animation-delay: $s;
+}
+@mixin translateX($value) {
+	-moz-transform: translateX($value);
+	-webkit-transform: translateX($value);
+	-ms-transform: translateX($value);
+	transform: $value;
+}
+@mixin translateY($value) {
+	-moz-transform: translateY($value);
+	-webkit-transform: translateY($value);
+	-ms-transform: translateY($value);
+	transform: $value;
+}
+
+/* TRANSITION FOR LINKS AND BUTTONS */
+@mixin transition($str) {
+	-webkit-transition: $str;
+	-moz-transition: $str;
+	-o-transition: $str;
+	transition: $str;
+}

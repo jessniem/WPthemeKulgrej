@@ -1,0 +1,164 @@
+/* ***************************
+		HEADER
+*************************** */
+
+.menu-item a:active {
+	color: $grey;
+}
+
+
+/* ***************************
+		HEADER IMG
+*************************** */
+
+.header-img {
+	background-attachment: fixed;
+}
+
+
+/* ***************************
+		INDEX PAGE
+*************************** */
+
+.index-img {
+	.header-bg {
+		width: 70%;
+	}
+}
+
+
+/* ***************************
+		TURNING WORDS
+*************************** */
+
+.turning-words {
+	margin-top: 30px;
+	width: 400px;
+	@include flex-direction(row);
+	.sentence{
+		font-size: 22px;
+		font-size: 2.2em;
+		margin: 0;
+		br {
+			display: none;
+		}
+	}
+	/*Vertical Sliding*/
+	.tw {
+		font-size: 22px;
+		font-size: 2.2em;
+		text-indent: 8px;
+	}
+	.tw span {
+		color: $orange;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		@include animation(topToBottom 22.5s linear infinite 0s);
+	}
+	.tw span:nth-child(1){
+		@include animation-delay(0s);
+	}
+	.tw span:nth-child(2){
+		@include animation-delay(2.5s);
+	}
+	.tw span:nth-child(3){
+		@include animation-delay(5s);
+	}
+	.tw span:nth-child(4){
+		@include animation-delay(7.5s);
+	}
+	.tw span:nth-child(5){
+		@include animation-delay(10s);
+	}
+	.tw span:nth-child(6){
+		@include animation-delay(12.5s);
+	}
+	.tw span:nth-child(7){
+		@include animation-delay(15s);
+	}
+	.tw span:nth-child(8){
+		@include animation-delay(17.5s);
+	}
+	.tw span:nth-child(9){
+		@include animation-delay(20s);
+	}
+	.tw span:nth-child(10){
+		@include animation-delay(22.5s);
+	}
+
+}
+/* ***************************
+		ABOUT PAGE
+*************************** */
+
+.about-us {
+	margin: 0;
+	padding-top: 40px;
+	.about-text {
+		width: 75%;
+	}
+}
+
+.contact-info {
+	margin: auto;
+	width: 85%;
+	@include flex-direction(row);
+	@include justify-content(space-around);
+	.about {
+		padding-top: 30px;
+	}
+}
+
+/* ***************************
+		QUOTES PAGE
+*************************** */
+
+.main-quote {
+	.quote-container {
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		@include justify-content(space-around);
+		.quote-text {
+			width: 50%;
+			&:last-child:nth-child(even) {
+				margin-bottom: 60px;
+			}
+			p {
+				margin: 20px auto;
+				max-width: 500px;
+			}
+		}
+	}
+}
+
+/* ***************************
+		CONTACT PAGE
+*************************** */
+
+.contact {
+    width: 400px;
+}
+
+/* ***************************
+		CASES PAGE
+*************************** */
+
+.cases-container {
+	.cases-content {
+		@include justify-content(center);
+	}
+}
+
+
+/* ***************************
+		FOOTER
+*************************** */
+
+footer {
+	@include flex-direction(row);
+	@include justify-content(space-around);
+	.footer-col-3 {
+		order: 3;
+	}
+}
